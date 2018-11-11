@@ -12,3 +12,7 @@ let changeColor = document.getElementById('changeColor');
           {code: 'document.body.style.backgroundColor = "' + color + '";'});
     });
   };
+  chrome.tabs.getSelected(null,function(tab) { // null defaults to current window
+    var title = tab.title;
+    document.getElementById("test").value = title;
+  });
